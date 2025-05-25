@@ -1,4 +1,4 @@
-# ITSC_EXAM_API_2024
+# ITSC_EXAM_API_2025
 จงพัฒนา Web API ตาม Requirement ดังต่อไปนี้
 <br>
 ## Technical Requirement <br>
@@ -16,13 +16,12 @@
 <br>
 
 ## Business Requirement <br>
-1 มหาวิทยาลัยเชียงใหม่มีความต้องการที่จะพัฒนาระบบ ลงทะเบียนสมัครเป็นพนักงานมหาวิทยาลัย จงพัฒนา Web API ตามความต้องการดังต่อไปนี้<br>
+1 บริษัท ต้องการพัฒนาระบบ Backend สำหรับจัดการคลังสินค้าและคำสั่งซื้อ (Order Management System) สำหรับร้านค้า E-commerce ขนาดเล็กที่ต้องการความรวดเร็วและประสิทธิภาพสูง จงพัฒนา Web API เพื่อรองรับฟังก์ชันการทำงานหลักของระบบนี้"<br>
 2 มีFunction ลงทะเบียน Create User Account (API Create User)   (10 คะแนน) <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.1 Function Create User Account  มี Data ที่ต้องกรอกคือ<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Email(คือ User account ไม่สามารถซ้ำได้ แต่ไม่ใช่ Primary Key)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- ชื่อ<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- นาม สกุล <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- เลขบัตรประชาชน (Optional เข้ารหัสด้วย Symmetric Encryption ได้คะแนนพิเศษ)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- เบอร์โทร(Optional เข้ารหัสด้วย Symmetric Encryption ได้คะแนนพิเศษ)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Password (Optional เข้ารหัสด้วย Hashing Encryption ได้คะแนนพิเศษ)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- ConfirmPassword (Optional เข้ารหัสด้วย Hashing Encryption ได้คะแนนพิเศษ)<br>
@@ -30,31 +29,26 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.1 User สามารถ login ด้วย User(Email) และ Password<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.2 API return User Basic Info คือ Email,ชื่อ, นาม สกุล, อยู่ใน Payload ของ JWT Token<br>
 
-4 มี Function แสดง ประวัติผู้สมัคร (API Get User All data)( API request JWT สำหรับ Authentication and Authorization )  (10 คะแนน) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.1 Data ที่ต้อง Return <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Email(คือ User account ไม่สามารถซ้ำได้ แต่ไม่ใช่ Primary Key)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- ชื่อ<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- นาม สกุล <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- รูปผู้สมัคร <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- เลขบัตรประชาชน <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- เบอร์โทร<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Skill (List<String>)   <br>
+4 มี Function จัดการสินค้า ของ Admin (API Admin Search Order List)) (API Authentication ด้วยการ  Basic Authentication  กำหนด ตัวแปร User & password นี้ที่ ENV)  (10 คะแนน) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.1 สามารถค้นหา เลขคำสั่งซื้อสินค้า ,ชื่อ นาม สกุล ผู้สั่ง<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.2 Data Return Order Product List<Order> <br>
 
-5 มี Function แก้ไข ประวัติผู้สมัคร (API Update User All data)( API request JWT สำหรับ Authentication and Authorization )  (10 คะแนน) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.1 Data ที่ต้อง แก้ไขได้ <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Email(คือ User account ไม่สามารถซ้ำได้ แต่ไม่ใช่ Primary Key)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- ชื่อ<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- นาม สกุล <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- รูปผู้สมัคร <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- เลขบัตรประชาชน <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- เบอร์โทร<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Skill (List<String>)   <br>
+5 มี Function แสดง สั่งซื้อสินค้า (API User Create Order)( API request JWT สำหรับ Authentication and Authorization )  (10 คะแนน) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4.1 Data ที่ต้อง Add โดย 1 คำสั่งซื้อสามารถ เลือกสินได้หลายอย่าง แต่ละอย่างมีจำนวนแตกต่างกัน และ return OrderNumber<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Product Name(คือ Product Name ไม่สามารถซ้ำได้ แต่ไม่ใช่ Primary Key)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- จำนวน<br>
 
-6 มี Function ดูรายการผู้สมัคร ของ Admin (API Admin Search User List)) (API Authentication ด้วยการ  Basic Authentication  กำหนด ตัวแปร User & password นี้ที่ ENV)  (10 คะแนน) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.1 สามารถค้นหา ได้ทั้ง ชื่อและ นามสกุล <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6.2 Data Return Userr List<UserAccount> <br>
+5 มี Function แก้ไข สั่งซื้อสินค้า (API User Update Order)( API request JWT สำหรับ Authentication and Authorization )  (10 คะแนน) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.1 Data ที่ต้อง แก้ไขได้ ตาม คำสั่งซื้อ OrderNumber<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-Product Name<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- จำนวน<br>
 
-7 มี Function delete ผู้สมัคร ของ Admin (API Admin delete User )) (API Authentication ด้วยการ  Basic Authentication กำหนด ตัวแปร User & password นี้ที่ ENV)  (10 คะแนน) <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.1 Admin สามารถ select เลือกลบ user account  ได้หลายคนพร้อมกัน<UserAccount> <br>
+5 มี Function ยืนยัน สั่งซื้อสินค้า (API User Confirm Order)( API request JWT สำหรับ Authentication and Authorization )  (10 คะแนน) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5.1 Data ที่ต้อง add ซึ่งต้องตามคำสั่งซื้อOrderNumber <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-ที่อยู่จัดส่ง<br>
+
+
+7 มี Function Admin  update สถาณะคำสั่งซื้อ (API Admin Approve Order )) (API Authentication ด้วยการ  Basic Authentication กำหนด ตัวแปร User & password นี้ที่ ENV)  (10 คะแนน) <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;7.1 Admin สามารถ select เลือกยืนยัน user Order  ได้หลายOrderพร้อมกัน<UserAccount> <br>
 
 
