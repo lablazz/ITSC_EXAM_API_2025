@@ -1,4 +1,14 @@
-# ITSC_EXAM_API_2025
+# Naravid Ariya
+
+You can pull and run by docker. I uploaded at docker hub
+
+docker pull lablazz/itsc-exam-api
+
+then run 
+
+## docker-compose up --build
+
+# โจทย์
 จงพัฒนา Web API ตาม Requirement ดังต่อไปนี้
 <br>
 ## Technical Requirement <br>
