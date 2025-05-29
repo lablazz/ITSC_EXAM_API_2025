@@ -3,11 +3,11 @@
 after you clone this repository. <br>
 You can pull and run by docker. I already uploaded to docker hub.
 
-<pre>  ```bash $ docker pull lablazz/itsc-exam-api ``` </pre>
+<pre> $ docker pull lablazz/itsc-exam-api </pre>
 
 then run 
 
-<pre>  ```bash $ docker-compose up --build ``` </pre>
+<pre> $ docker-compose up --build </pre>
 
 # โจทย์
 จงพัฒนา Web API ตาม Requirement ดังต่อไปนี้
