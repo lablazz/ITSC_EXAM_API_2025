@@ -1,13 +1,57 @@
-# Naravid Ariya
+# Naravid Ariya | Lablazz
 
-after you clone this repository. <br>
-You can pull and run by docker. I already uploaded to docker hub.
+<br>
 
-<pre> $ docker pull lablazz/itsc-exam-api </pre>
+## Get Start
+### 1. Clone the Repository
 
-then run 
+<pre>
+git clone https://github.com/your-username/itsc-exam-api.git
+cd itsc-exam-api
+</pre>
 
-<pre> $ docker-compose up --build </pre>
+### 2. Create the .env File
+You need to create a .env file in the project root with the following environment variables: <br>
+<pre>
+PORT=
+DB_HOST=
+DB_NAME=
+DB_USER=
+DB_PASSWORD=
+JWT_SECRET=
+ENCRYPTION_KEY=
+ADMIN_USERNAME=
+ADMIN_PASSWORD=
+</pre>
+
+### 3. Pull and Run with Docker
+Step 1: Pull the Docker image
+<pre>
+$ docker pull lablazz/itsc-exam-api
+</pre>
+
+Step 2: Start the service
+<pre>
+$ docker-compose up --build
+</pre>
+This will build and run the application using the settings provided in your .env file and docker-compose.yml
+
+<br>
+
+## API Documentation
+<pre>
+http://localhost:8080/api-docs
+</pre>
+
+<br>
+
+## Docker Hub
+<pre>
+https://hub.docker.com/r/lablazz/itsc-exam-api
+</pre>
+
+<br>
+<br>
 
 # โจทย์
 จงพัฒนา Web API ตาม Requirement ดังต่อไปนี้
