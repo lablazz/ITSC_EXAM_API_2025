@@ -1,12 +1,13 @@
 # Naravid Ariya
 
-You can pull and run by docker. I uploaded at docker hub
+after you clone this repository. <br>
+You can pull and run by docker. I already uploaded to docker hub.
 
-docker pull lablazz/itsc-exam-api
+<pre>  ```bash $ docker pull lablazz/itsc-exam-api ``` </pre>
 
 then run 
 
-## docker-compose up --build
+<pre>  ```bash $ docker-compose up --build ``` </pre>
 
 # โจทย์
 จงพัฒนา Web API ตาม Requirement ดังต่อไปนี้
