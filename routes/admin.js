@@ -5,4 +5,6 @@ const basicAuth = require('../middlewares/basicAuth');
 
 router.get('/admin/orders', basicAuth, adminController.searchOrders);
 
+router.put('/admin/approve-orders', basicAuth, adminController.approveOrders);
+
 module.exports = router;
